@@ -1,0 +1,41 @@
+Tester for ofdmSymbol and ofdmDemod use 16-QAM symbol
+Generate a 16-QAM symbol:
+k = 1/sqrt(10);
+aqm_m = aqm16(k);
+m1 = aqm_m(randi(16,1,12)); %choose 12 random modulation symbols
+
+Below shows a 1x12 column vector: m1
+Columns 1 through 4
+0.3162 - 0.9487i 0.3162 - 0.9487i 0.3162 + 0.9487i 0.3162 - 0.9487i Columns 5 through 8
+0.9487 - 0.3162i 0.3162 - 0.9487i -0.9487 - 0.3162i 0.3162 + 0.3162i Columns 8 through 12
+0.3162 + 0.3162i -0.9487 - 0.9487i -0.3162 + 0.3162i 0.9487 - 0.3162i
+
+ Console Output 1:
+Trial>> tester
+Enter kth number 0~11: 3 0.3162 - 0.9487i
+Console Output 2:
+Trial>> tester
+Enter kth number 0~11: 7 0.3162 + 0.3162i
+Console Output 3:
+Trial>> tester
+Enter kth number 0~11: 11 0.9487 - 0.3162i
+
+Tester for ofdmSymbol and ofdmDemod use QPSK symbol 
+Generate a QPSK symbol: m2 = qpsk();
+m2 = m2(randi(4,1,12));
+
+Below shows a 1x12 column vector: m2
+Columns 1 through 4
+0.3162 + 0.3162i 0.3162 + 0.3162i -0.3162 + 0.9487i 0.9487 - 0.3162i Columns 5 through 8
+0.9487 - 0.3162i 0.3162 - 0.9487i 0.9487 - 0.3162i 0.3162 - 0.9487i Columns 9 through 12
+0.3162 + 0.3162i 0.3162 - 0.9487i 0.9487 - 0.3162i -0.3162 + 0.9487i
+
+Console Output 1:
+Trial>> tester
+Enter kth number 0~11: 4 0.9487 - 0.3162i
+Console Output 2:
+Trial>> tester
+Enter kth number 0~11: 8 0.3162 + 0.3162i
+Console Output 3:
+Trial>> tester
+Enter kth number 0~11: 10 0.9487 - 0.3162i
